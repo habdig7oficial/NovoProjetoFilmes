@@ -1,15 +1,50 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Tab 3 </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title> Filmes </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list *ngIf="atores">
+    <ion-item-sliding *ngFor="let ator of atores">
+      <ion-item lines="full">
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+          <ion-thumbnail slot="start">
+            <img *ngIf="ator.foto" src="{{ator.foto}}" />
+            <ion-icon *ngIf="!ator.foto" name="videocam-off"></ion-icon>
+          </ion-thumbnail>
+  
+          <ion-label class="ion-text-wrap">
+            <a>
+              <h1>{{ator.nome}}</h1>
+              <p>birthday: {{ator.nascimento}}</p>
+              <ion-badge
+                class="badge-margin"
+                color="medium"
+                *ngFor="let obra of ator.obras"
+              >
+                {{obra}}
+              </ion-badge>
+
+              <p>Birth City: {{ ator.cidade }}</p>
+
+            </a>
+          </ion-label>
+  
+          <!--<ion-chip
+            [color]="filme.classificacao < 5 ? 'danger' : ((filme.classificacao < 7 ? 'warning' : 'success'))"
+            outline
+          >
+            <ion-label>{{filme.classificacao}}</ion-label>
+          </ion-chip>-->
+
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="primary">
+          <ion-icon slot="icon-only" name="star"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import type { IFilme } from "../model/IFilme";
+import type IFilme from "../model/IFilme";
 import { filmes } from "../fake-api/fake-query-return";
 
 @Component({
