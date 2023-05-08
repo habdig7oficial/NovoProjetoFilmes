@@ -1,5 +1,5 @@
 /* eslint-disable eol-last */
-export interface IFilme {
+export default interface IFilme {
   nome: string;
   lancamento: string;
   duracao: string;

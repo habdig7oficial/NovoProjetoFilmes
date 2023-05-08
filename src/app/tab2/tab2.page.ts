@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import ISerie from "../model/ISerie";
+import { series } from "../fake-api/fake-query-return";
 
 @Component({
   selector: "app-tab2",
@@ -6,5 +8,6 @@ import { Component } from "@angular/core";
   styleUrls: ["tab2.page.scss"],
 })
 export class Tab2Page {
+  listaSeries: ISerie[] = series
   constructor() {}
 }
